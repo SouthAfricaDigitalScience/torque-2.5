@@ -35,7 +35,8 @@ cp modules/$VERSION $LIBRARIES_MODULES/$NAME/$VERSION
 # Testing module
 module avail
 module list
-module add $NAME/$VERSION
+module load $NAME/$VERSION
+module list
 which qsub
 
 # Add a test to check
