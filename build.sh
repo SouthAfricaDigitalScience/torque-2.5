@@ -30,6 +30,7 @@ mkdir -p $SOFT_DIR
 if [[ ! -e $SRC_DIR/$SOURCE_FILE ]] ; then
   echo "seems like this is the first build - Let's get the $SOURCE_FILE from $SOURCE_REPO and unarchive to $WORKSPACE"
   mkdir -p $SRC_DIR
+  echo "Downloading from: $SOURCE_REPO/$SOURCE_FILE"
   wget $SOURCE_REPO/$SOURCE_FILE -O $SRC_DIR/$SOURCE_FILE
   #tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE  
 else
@@ -42,7 +43,7 @@ echo "change to working directory"
 cd $WORKSPACE/$NAME-$VERSION
 
 echo "cleaning up previous builds"
-make distclean
+#make distclean
 echo "Configuring the build"
 CC=`which gcc` CXX=`which g++` ./configure --prefix=${SOFT_DIR} --without-tcl 
 echo "Running the build"
