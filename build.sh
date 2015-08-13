@@ -45,6 +45,6 @@ cd $WORKSPACE/$NAME-$VERSION
 echo "cleaning up previous builds"
 #make distclean
 echo "Configuring the build"
-CC=`which gcc` CXX=`which g++` ./configure --prefix=${SOFT_DIR} --without-tcl 
+CC=`which gcc` CXX=`which g++` ./configure --prefix=${SOFT_DIR} --without-tcl --with-server-home=${SOFT_DIR}/spool
 echo "Running the build"
 make all
