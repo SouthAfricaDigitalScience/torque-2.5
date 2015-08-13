@@ -37,6 +37,12 @@ module avail
 module list
 module load $NAME/$VERSION
 module list
+
+echo "PATH"
+echo $PATH
+echo "LD_LIBRARY_PATH"
+echo $LD_LIBRARY_PATH
+
 which qsub
 
 # Add a test to check
