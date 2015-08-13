@@ -31,11 +31,13 @@ if [[ ! -e $SRC_DIR/$SOURCE_FILE ]] ; then
   echo "seems like this is the first build - Let's get the $SOURCE_FILE from $SOURCE_REPO and unarchive to $WORKSPACE"
   mkdir -p $SRC_DIR
   wget $SOURCE_REPO/$SOURCE_FILE -O $SRC_DIR/$SOURCE_FILE
-  tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE  
+  #tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE  
 else
   echo "continuing from previous builds, using source at " $SRC_DIR/$SOURCE_FILE
 fi
 
+echo "untar the tarball"
+tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
 echo "change to working directory"
 cd $WORKSPACE/$NAME-$VERSION
 
