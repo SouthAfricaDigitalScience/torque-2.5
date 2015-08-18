@@ -36,7 +36,8 @@ cp modules/$VERSION $LIBRARIES_MODULES/$NAME/$VERSION
 module avail
 module list
 module add $NAME/$VERSION
+echo $PATH
 which qsub
+exit 0
 
 # Add a test to check
-
