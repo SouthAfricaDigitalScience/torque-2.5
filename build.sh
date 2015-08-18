@@ -32,15 +32,14 @@ if [[ ! -e $SRC_DIR/$SOURCE_FILE ]] ; then
   mkdir -p $SRC_DIR
   echo "Downloading from: $SOURCE_REPO/$SOURCE_FILE"
   wget $SOURCE_REPO/$SOURCE_FILE -O $SRC_DIR/$SOURCE_FILE
-  tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
-  cd $WORKSPACE/$NAME-$VERSION
+  
 else
   echo "continuing from previous builds, using source at " $SRC_DIR/$SOURCE_FILE
-  cd $WORKSPACE/$NAME-$VERSION
-  echo "cleaning up previous builds"
-  make distclean
 fi
 
+tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
+cd $WORKSPACE/$NAME-$VERSION
+  
 echo "Configuring the build"
 CC=`which gcc` CXX=`which g++` ./configure --prefix=${SOFT_DIR} --without-tcl --with-server-home=${SOFT_DIR}/spool
 echo "Running the build"
