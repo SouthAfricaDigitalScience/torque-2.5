@@ -16,7 +16,7 @@ proc ModulesHelp { } {
    puts stderr "\tAdds Torque Resource Manager 2.5.13 to your environment"
 }
 
-module load gcc/4.8.2
+module load gcc/$GCC_VERSION
 
 module-whatis   "$NAME $VERSION."
 setenv       TORQUE_VERSION       $VERSION
