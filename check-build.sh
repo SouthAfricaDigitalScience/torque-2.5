@@ -30,7 +30,8 @@ prepend-path    LD_LIBRARY_PATH $::env(TORQUE_DIR)/lib
 MODULE_FILE
 ) > modules/$VERSION
 mkdir -p $LIBRARIES_MODULES/$NAME
-cp modules/$VERSION $LIBRARIES_MODULES/$NAME/$VERSION
+
+cp modules/$VERSION-gcc-$GCC_VERSION $LIBRARIES_MODULES/$NAME/$VERSION-gcc-$GCC_VERSION
 
 # Testing module
 module avail
@@ -53,4 +54,3 @@ which qsub
 exit 0
 
 # Add a test to check
-
