@@ -17,6 +17,10 @@ module avail
 
 # NCURSES_VERSION will be needed later
 module load ncurses/5.9
+
+echo "module list again after loading ncurses/5.9"
+module list
+
 module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
