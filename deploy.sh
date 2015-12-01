@@ -19,8 +19,9 @@ echo "CXX is $CXX"
 make install
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
 mkdir -p ${LIBRARIES_MODULES}/${NAME}
-(
 
+(
+cat <<MODULE_FILE
 #%Module1.0
 ## $NAME modulefile
 ##
@@ -39,4 +40,5 @@ prepend-path    PATH            $::env(TORQUE_DIR)/include
 prepend-path    PATH            $::env(TORQUE_DIR)/bin
 prepend-path    MANPATH         $::env(TORQUE_DIR)/man
 prepend-path    LD_LIBRARY_PATH $::env(TORQUE_DIR)/lib
+MODULE_FILE
 ) >  ${LIBRARIES_MODULES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}

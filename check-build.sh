@@ -2,10 +2,10 @@
 . /etc/profile.d/modules.sh
 
 module load ci
-module load gcc/$GCC_VERSION
+module load gcc/${GCC_VERSION}
 
 echo "About to make the modules"
-cd $WORKSPACE/$NAME-$VERSION
+cd ${WORKSPACE}/${NAME}-${VERSION}
 ls
 echo $?
 
@@ -28,7 +28,7 @@ proc ModulesHelp { } {
 prereq gcc/${GCC_VERSION}
 
 module-whatis   "${NAME} ${VERSION}. not for use in production, only integration. See https://github.com/SouthAfricaDigitalScience/torque-2.5"
-setenv       TORQUE_VERSION       ${VERSION}
+setenv       TORQUE_VERSION       ${VERSION}-gcc-${GCC_VERSION}
 setenv       TORQUE_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}
 
 prepend-path    PATH            $::env(TORQUE_DIR)/bin

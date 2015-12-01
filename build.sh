@@ -1,11 +1,12 @@
 #!/bin/bash -e
-SOURCE_FILE=$NAME-$VERSION.tar.gz
+. /etc/profile.d/modules.sh
+SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 #SOURCE_REPO="http://www.adaptivecomputing.com/resources/downloads/torque/"
 SOURCE_REPO="http://www.adaptivecomputing.com/index.php?wpfb_dl=2714"
 # We pretend that the $SOURCE_FILE is there, even though it's actually a dir.
 NAME="torque"
 VERSION="2.5.13"
-SOURCE_FILE="$NAME-$VERSION.tar.gz"
+SOURCE_FILE="${NAME}-${VERSION}.tar.gz"
 
 module load ci
 module load gcc/${GCC_VERSION}
