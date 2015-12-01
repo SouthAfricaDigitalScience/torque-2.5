@@ -2,6 +2,7 @@
 . /etc/profile.d/modules.sh
 
 module load ci
+module add ncurses
 module load gcc/${GCC_VERSION}
 
 echo "About to make the modules"

@@ -9,7 +9,9 @@ VERSION="2.5.13"
 SOURCE_FILE="${NAME}-${VERSION}.tar.gz"
 
 module load ci
-module load gcc/${GCC_VERSION}
+# NCURSES_VERSION will be needed later
+module add ncurses
+module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
 echo ${REPO_DIR}

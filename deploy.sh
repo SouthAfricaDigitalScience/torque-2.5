@@ -3,6 +3,7 @@
 . /etc/profile.d/modules.sh
 echo ${SOFT_DIR}
 module add deploy
+module add ncurses
 module add gcc/${GCC_VERSION}
 echo ${SOFT_DIR}
 cd ${WORKSPACE}/${NAME}-${VERSION}
