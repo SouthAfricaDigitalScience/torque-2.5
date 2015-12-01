@@ -1,8 +1,20 @@
 #!/bin/bash -e
+. /etc/profile.d/modules.sh
+
 module load ci
+module load gcc/$GCC_VERSION
+
 echo "About to make the modules"
-cd ${WORKSPACE}/${NAME}-${VERSION}
+cd $WORKSPACE/$NAME-$VERSION
+ls
+echo $?
+
+echo "running make check"
+make check
+
+echo "runing make install"
 make install
+
 mkdir -p modules
 (
 cat <<MODULE_FILE
