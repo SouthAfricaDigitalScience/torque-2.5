@@ -1,4 +1,5 @@
 #!/bin/bash -e
+. /etc/profile.d/modules.sh
 #SOURCE_FILE=$NAME-$VERSION.tar.gz
 # We will build the code from the github repo, but if we want specific versions,
 # a new Jenkins job will be created for the version number and we'll provide
@@ -8,9 +9,6 @@ SOURCE_REPO="http://wpfilebase.s3.amazonaws.com/torque"
 =======
 SOURCE_REPO="http://www.adaptivecomputing.com/resources/downloads/torque/"
 >>>>>>> 6792b02625b15f118e9ee586377f63b4091426ff
-# We pretend that the $SOURCE_FILE is there, even though it's actually a dir.
-NAME="torque"
-VERSION="2.5.13"
 SOURCE_FILE="$NAME-$VERSION.tar.gz"
 
 module load ci
@@ -25,9 +23,9 @@ echo $WORKSPACE
 echo "SOFT_DIR is"
 echo $SOFT_DIR
 
-mkdir -p $WORKSPACE
-mkdir -p $SRC_DIR
-mkdir -p $SOFT_DIR
+mkdir -p ${WORKSPACE}
+mkdir -p ${SRC_DIR}
+mkdir -p ${SOFT_DIR}
 
 #  Download the source file
 
@@ -42,7 +40,7 @@ else
 fi
 
 echo "untar the tarball"
-tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
+tar -xvzf --skip-newer-files $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
 echo "change to working directory"
 cd $WORKSPACE/$NAME-$VERSION
   
