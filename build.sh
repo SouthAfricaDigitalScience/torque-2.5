@@ -21,6 +21,9 @@ module load ncurses/5.9
 echo "module list again after loading ncurses/5.9"
 module list
 
+echo "cat"
+cat /repo/modules/libraries/ncurses/5.9
+
 module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
@@ -55,7 +58,7 @@ else
 fi
 
 echo "untar the tarball"
-tar xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
+tar xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE}
 echo "change to working directory"
 cd ${WORKSPACE}/${NAME}-${VERSION}
 
