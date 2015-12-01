@@ -1,7 +1,12 @@
 # torque-2.5
-A repository containing torque 2.5.13 installation scripts used by Jenkins  
+
+A repository containing torque 2.5.13 installation scripts used by Jenkins.
+This repository builds torque with various configurations.
 
 # how to use this repo
+
+This repo is used entirely by Jenkins to build site-specific TORQUE libraries, in order to simulate sites. 
+Some sites have customised TORQUEs, and we need to build flavourse of applications, such as OpenMPI, against these configurations. 
 
 # Contents of the repo
 This repo contains two scripts
@@ -10,6 +15,10 @@ This repo contains two scripts
   2. `check-build.sh`
 
 These define basically two test phases, the **build** and **functional** test phases respectively.
+
+## Branches
+
+The branches track configurations of TORQUE. The master branch is the *vanilla* configuration.
 
 ## Build Test Phase
 

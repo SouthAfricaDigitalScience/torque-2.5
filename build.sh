@@ -3,7 +3,11 @@
 # We will build the code from the github repo, but if we want specific versions,
 # a new Jenkins job will be created for the version number and we'll provide
 # the URL to the tarball in the configuration.
+<<<<<<< HEAD
 SOURCE_REPO="http://wpfilebase.s3.amazonaws.com/torque"
+=======
+SOURCE_REPO="http://www.adaptivecomputing.com/resources/downloads/torque/"
+>>>>>>> 6792b02625b15f118e9ee586377f63b4091426ff
 # We pretend that the $SOURCE_FILE is there, even though it's actually a dir.
 NAME="torque"
 VERSION="2.5.13"
