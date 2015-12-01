@@ -1,10 +1,19 @@
+#!/bin/bash -e
+. /etc/profile.d/modules.sh
+
 module load ci
+module load gcc/$GCC_VERSION
+
 echo "About to make the modules"
 cd $WORKSPACE/$NAME-$VERSION
 ls
 echo $?
 
-make install # DESTDIR=$SOFT_DIR
+echo "running make check"
+make check
+
+echo "runing make install"
+make install
 
 mkdir -p modules
 (
@@ -31,7 +40,7 @@ MODULE_FILE
 ) > modules/$VERSION
 mkdir -p $LIBRARIES_MODULES/$NAME
 
-cp modules/$VERSION-gcc-$GCC_VERSION $LIBRARIES_MODULES/$NAME/$VERSION-gcc-$GCC_VERSION
+cp modules/$VERSION $LIBRARIES_MODULES/$NAME/$VERSION-gcc-$GCC_VERSION
 
 # Testing module
 module avail
