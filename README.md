@@ -1,3 +1,4 @@
+[![Build Status](http://ci.sagrid.ac.za:8080/buildStatus/icon?job=torque-deploy)](http://ci.sagrid.ac.za:8080/job/torque-deploy/)
 # torque-2.5
 
 A repository containing torque 2.5.13 installation scripts used by Jenkins.
@@ -5,8 +6,8 @@ This repository builds torque with various configurations.
 
 # how to use this repo
 
-This repo is used entirely by Jenkins to build site-specific TORQUE libraries, in order to simulate sites. 
-Some sites have customised TORQUEs, and we need to build flavourse of applications, such as OpenMPI, against these configurations. 
+This repo is used entirely by Jenkins to build site-specific TORQUE libraries, in order to simulate sites.
+Some sites have customised TORQUEs, and we need to build flavourse of applications, such as OpenMPI, against these configurations.
 
 # Contents of the repo
 This repo contains two scripts
