@@ -10,7 +10,7 @@ SOURCE_FILE="${NAME}-${VERSION}.tar.gz"
 
 module load ci
 # NCURSES_VERSION will be needed later
-module add ncurses
+module add ncurses/5.9
 module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
