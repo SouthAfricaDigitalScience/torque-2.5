@@ -2,6 +2,9 @@
 . /etc/profile.d/modules.sh
 
 module load ci
+module add gmp
+module add mpfr
+module add mpc
 module add ncurses
 module load gcc/${GCC_VERSION}
 
@@ -52,6 +55,10 @@ echo ${PATH}
 echo "LD_LIBRARY_PATH"
 echo ${LD_LIBRARY_PATH}
 
+module add gmp
+module add mpfr
+module add mpc
+module add  gcc/{GCC_VERSION}
 module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
 module list
 

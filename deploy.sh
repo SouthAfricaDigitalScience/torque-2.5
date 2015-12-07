@@ -3,6 +3,9 @@
 . /etc/profile.d/modules.sh
 echo ${SOFT_DIR}
 module add deploy
+module add gmp
+module add mpfr
+module add mpc
 module add ncurses
 module add gcc/${GCC_VERSION}
 echo ${SOFT_DIR}
