@@ -13,8 +13,7 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
-
-module load gcc/${GCC_VERSION}
+module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
 echo ${REPO_DIR}
