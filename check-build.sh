@@ -33,7 +33,7 @@ prereq gcc/${GCC_VERSION}
 
 module-whatis   "${NAME} ${VERSION}. not for use in production, only integration. See https://github.com/SouthAfricaDigitalScience/torque-2.5"
 setenv       TORQUE_VERSION       ${VERSION}-gcc-${GCC_VERSION}
-setenv       TORQUE_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}
+setenv       TORQUE_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
 prepend-path    PATH            $::env(TORQUE_DIR)/bin
 prepend-path    PATH            $::env(TORQUE_DIR)/include
