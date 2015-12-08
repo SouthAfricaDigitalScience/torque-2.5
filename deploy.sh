@@ -17,9 +17,9 @@ export CXX=`which g++`
 echo "CC is ${CC} "
 echo "CXX is $CXX"
 ./configure \
---prefix=${SOFT_DIR} \
+--prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
 --without-tcl \
---with-server-home=${SOFT_DIR}/spool
+--with-server-home=${SOFT_DIR}-gcc-${GCC_VERSION}/spool
 make install
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
 mkdir -p ${LIBRARIES_MODULES}/${NAME}
