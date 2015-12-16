@@ -58,7 +58,7 @@ echo ${LD_LIBRARY_PATH}
 module add gmp
 module add mpfr
 module add mpc
-module add  gcc/{GCC_VERSION}
+module add gcc/${GCC_VERSION}
 module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
 module list
 
