@@ -1,4 +1,4 @@
-[![Build Status](http://ci.sagrid.ac.za:8080/buildStatus/icon?job=torque-deploy)](http://ci.sagrid.ac.za:8080/job/torque-deploy/)
+[![Build Status](http://ci.sagrid.ac.za/buildStatus/icon?job=torque-deploy)](http://ci.sagrid.ac.za/job/torque-deploy/)
 # torque-2.5
 
 A repository containing torque 2.5.13 installation scripts used by Jenkins.
@@ -14,8 +14,9 @@ This repo contains two scripts
 
   1. `build.sh`
   2. `check-build.sh`
+  3. `deploy.sh`
 
-These define basically two test phases, the **build** and **functional** test phases respectively.
+These define basically two test phases, the **build** and **functional** test phases, as well as the deploy phase respectively
 
 ## Branches
 
@@ -27,7 +28,6 @@ The build phase does the following things
 
   1. Set up the build environment variables
   2. Downloads the source code using `wget`
-  3. Configure the build with option `--without-tcl`
   4. Compile the source into an executable form.
   5. Create a modulefile which loads the dependencies and sets the environment variables needed to execute the application.
 

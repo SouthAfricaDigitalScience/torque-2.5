@@ -6,6 +6,7 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
+module add tcltk
 module load gcc/${GCC_VERSION}
 
 echo "About to make the modules"
@@ -59,6 +60,7 @@ module add gmp
 module add mpfr
 module add mpc
 module add gcc/${GCC_VERSION}
+module add tcltk
 module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
 module list
 

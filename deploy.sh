@@ -9,18 +9,24 @@ module add mpc
 module add ncurses
 module add gcc/${GCC_VERSION}
 echo ${SOFT_DIR}
-cd ${WORKSPACE}/${NAME}-${VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "All tests have passed, will now build into ${SOFT_DIR}"
 echo "Configuring the build"
 export CC=`which gcc`
 export CXX=`which g++`
 echo "CC is ${CC} "
 echo "CXX is $CXX"
-./configure \
+rm -rf * 
+../configure \
 --prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
---without-tcl \
---with-server-home=${SOFT_DIR}-gcc-${GCC_VERSION}/spool
-make install
+--with-tcl=${TCL_DIR}/lib \
+--with-tclinclude=${TCL_DIR}/include \
+--with-tk=${TK_DIR}/lib \
+--with-tkinclude=${TK_DIR}/include \
+--enable-shared \
+--enable-static \
+--with-server-home=${SOFT_DIR}/spool
+make install -j2
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
 mkdir -p ${LIBRARIES_MODULES}/${NAME}
 

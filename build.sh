@@ -13,6 +13,7 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
+modulr add tcltk
 module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
@@ -48,17 +49,28 @@ fi
 
 echo "untar the tarball"
 tar xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
-echo "change to working directory"
-cd ${WORKSPACE}/${NAME}-${VERSION}
+echo "change to build directory"
+mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 
 echo "Configuring the build"
 export CC=`which gcc`
 export CXX=`which g++`
 echo "CC is ${CC} "
 echo "CXX is $CXX"
-./configure \
+#   --with-tcl              directory containing tcl configuration  (tclConfig.sh)
+#   --with-tclinclude       directory containing the public Tcl header files
+#  --with-tk               directory containing tk configuration (tkConfig.sh)
+#  --with-tkinclude        directory containing the public Tk header files.
+
+../configure \
 --prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
---without-tcl \
+--with-tcl=${TCL_DIR}/lib \
+--with-tclinclude=${TCL_DIR}/include \
+--with-tk=${TK_DIR}/lib \
+--with-tkinclude=${TK_DIR}/include \
+--enable-shared \
+--enable-static \
 --with-server-home=${SOFT_DIR}/spool
 echo "Running the build"
-make all
+make -j2 all
