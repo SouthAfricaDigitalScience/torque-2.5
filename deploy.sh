@@ -22,7 +22,7 @@ rm -rf *
 --enable-shared \
 --enable-static \
 --disable-gui \
---with-server-home=${SOFT_DIR}/spool
+--with-server-home=${SOFT_DIR}-gcc-${GCC_VERSION}/spool
 make install -j2
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
 mkdir -p ${LIBRARIES_MODULES}/${NAME}

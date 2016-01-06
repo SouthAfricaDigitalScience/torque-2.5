@@ -65,6 +65,6 @@ echo "CXX is $CXX"
 --enable-shared \
 --enable-static \
 --disable-gui \
---with-server-home=${SOFT_DIR}/spool
+--with-server-home=${SOFT_DIR}-gcc-${GCC_VERSION}/spool
 echo "Running the build"
 make -j2 all
