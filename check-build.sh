@@ -6,16 +6,12 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
-module add tcltk/8.5.18
 module load gcc/${GCC_VERSION}
 
 echo "About to make the modules"
-cd ${WORKSPACE}/${NAME}-${VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 ls
 echo $?
-
-echo "running make check"
-make check
 
 echo "runing make install"
 make install
