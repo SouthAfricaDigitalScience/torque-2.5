@@ -13,7 +13,6 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
-module add tcltk
 module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
@@ -59,19 +58,11 @@ export CXX=`which g++`
 export CFLAGS="${CFLAGS} -DUSE_INTERP_RESULT"
 echo "CC is ${CC} "
 echo "CXX is $CXX"
-#   --with-tcl              directory containing tcl configuration  (tclConfig.sh)
-#   --with-tclinclude       directory containing the public Tcl header files
-#  --with-tk               directory containing tk configuration (tkConfig.sh)
-#  --with-tkinclude        directory containing the public Tk header files.
-
 ../configure \
 --prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
---with-tcl=${TCL_DIR}/lib \
---with-tclinclude=${TCL_DIR}/include \
---with-tk=${TK_DIR}/lib \
---with-tkinclude=${TK_DIR}/include \
 --enable-shared \
 --enable-static \
+--disable-gui \ 
 --with-server-home=${SOFT_DIR}/spool
 echo "Running the build"
 make -j2 all

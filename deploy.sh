@@ -7,7 +7,6 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
-module add tcltk
 module add gcc/${GCC_VERSION}
 echo ${SOFT_DIR}
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
@@ -20,12 +19,9 @@ echo "CXX is $CXX"
 rm -rf *
 ../configure \
 --prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
---with-tcl=${TCL_DIR}/lib \
---with-tclinclude=${TCL_DIR}/include \
---with-tk=${TK_DIR}/lib \
---with-tkinclude=${TK_DIR}/include \
 --enable-shared \
 --enable-static \
+--disable-gui \
 --with-server-home=${SOFT_DIR}/spool
 make install -j2
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
