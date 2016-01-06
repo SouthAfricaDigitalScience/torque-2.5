@@ -7,6 +7,7 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
+module add tcltk
 module add gcc/${GCC_VERSION}
 echo ${SOFT_DIR}
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
@@ -16,7 +17,7 @@ export CC=`which gcc`
 export CXX=`which g++`
 echo "CC is ${CC} "
 echo "CXX is $CXX"
-rm -rf * 
+rm -rf *
 ../configure \
 --prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
 --with-tcl=${TCL_DIR}/lib \

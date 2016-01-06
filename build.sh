@@ -13,7 +13,7 @@ module add gmp
 module add mpfr
 module add mpc
 module add ncurses
-modulr add tcltk
+module add tcltk
 module add gcc/${GCC_VERSION}
 
 echo "REPO_DIR is "
