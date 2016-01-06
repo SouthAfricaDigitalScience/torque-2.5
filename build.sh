@@ -56,6 +56,7 @@ cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Configuring the build"
 export CC=`which gcc`
 export CXX=`which g++`
+export CFLAGS="${CFLAGS} -DUSE_INTERP_RESULT"
 echo "CC is ${CC} "
 echo "CXX is $CXX"
 #   --with-tcl              directory containing tcl configuration  (tclConfig.sh)
