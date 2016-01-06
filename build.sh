@@ -55,14 +55,16 @@ cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Configuring the build"
 export CC=`which gcc`
 export CXX=`which g++`
-export CFLAGS="${CFLAGS} -DUSE_INTERP_RESULT"
+#  This was introduced to address issue 8, but tcl is now not used.
+# keeping it here for reference purposes.
+# export CFLAGS="${CFLAGS} -DUSE_INTERP_RESULT"
 echo "CC is ${CC} "
 echo "CXX is $CXX"
 ../configure \
 --prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
 --enable-shared \
 --enable-static \
---disable-gui \ 
+--disable-gui \
 --with-server-home=${SOFT_DIR}/spool
 echo "Running the build"
 make -j2 all
