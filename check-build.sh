@@ -25,17 +25,21 @@ cat <<MODULE_FILE
 proc ModulesHelp { } {
    puts stderr "\tAdds Torque Resource Manager 2.5.13 to your environment"
 }
-
+module add gmp
+module add mpfr
+module add mpc
+module add ncurses
+module add gcc/${GCC_VERSION}
 prereq gcc/${GCC_VERSION}
 
 module-whatis   "${NAME} ${VERSION}. not for use in production, only integration. See https://github.com/SouthAfricaDigitalScience/torque-2.5"
 setenv       TORQUE_VERSION       ${VERSION}-gcc-${GCC_VERSION}
-setenv       TORQUE_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}-gcc-${GCC_VERSION}
+setenv       TORQUE_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
-prepend-path    PATH            $::env(TORQUE_DIR)/bin
-prepend-path    PATH            $::env(TORQUE_DIR)/include
-prepend-path    PATH            $::env(TORQUE_DIR)/bin
-prepend-path    MANPATH         $::env(TORQUE_DIR)/man
+prepend-path    PATH                         $::env(TORQUE_DIR)/bin
+prepend-path    PATH                         $::env(TORQUE_DIR)/include
+prepend-path    PATH                         $::env(TORQUE_DIR)/bin
+prepend-path    MANPATH                $::env(TORQUE_DIR)/man
 prepend-path    LD_LIBRARY_PATH $::env(TORQUE_DIR)/lib
 MODULE_FILE
 ) > modules/${VERSION}-gcc-${GCC_VERSION}

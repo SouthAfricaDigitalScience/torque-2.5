@@ -1,8 +1,33 @@
-[![Build Status](http://ci.sagrid.ac.za/buildStatus/icon?job=torque-deploy)](http://ci.sagrid.ac.za/job/torque-deploy/)
+[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=torque-deploy)](https://ci.sagrid.ac.za/job/torque-deploy/)
+
 # torque-2.5
 
 A repository containing torque 2.5.13 installation scripts used by Jenkins.
 This repository builds torque with various configurations.
+
+# Dependencies
+
+  * gmp
+  * mpfr
+  * mpc
+  * ncurses
+  * gcc/`${GCC_VERSION}`
+
+## GCC Versions
+
+  * 4.9.2
+  * 5.1.0
+  * 5.2.0
+
+# Configuration
+
+```
+--prefix=${SOFT_DIR}-gcc-${GCC_VERSION} \
+--enable-shared \
+--enable-static \
+--disable-gui \
+--with-server-home=${SOFT_DIR}-gcc-${GCC_VERSION}/spool
+```
 
 # how to use this repo
 
@@ -10,6 +35,7 @@ This repo is used entirely by Jenkins to build site-specific TORQUE libraries, i
 Some sites have customised TORQUEs, and we need to build flavourse of applications, such as OpenMPI, against these configurations.
 
 # Contents of the repo
+
 This repo contains two scripts
 
   1. `build.sh`
@@ -43,3 +69,5 @@ The test phase does the following things :
 # When things go wrong
 
 If you have a legitimate error, or need support, please [open an issue](../../issues)
+
+# Citing

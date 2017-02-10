@@ -67,4 +67,4 @@ echo "CXX is $CXX"
 --disable-gui \
 --with-server-home=${SOFT_DIR}-gcc-${GCC_VERSION}/spool
 echo "Running the build"
-make -j2 all
+make all
