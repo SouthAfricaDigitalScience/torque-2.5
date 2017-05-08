@@ -1,4 +1,5 @@
-[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=torque-deploy)](https://ci.sagrid.ac.za/job/torque-deploy/)
+[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=torque-deploy)](https://ci.sagrid.ac.za/job/torque-deploy/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.572609.svg)](https://doi.org/10.5281/zenodo.572609)
+
 
 # torque-2.5
 
@@ -71,3 +72,6 @@ The test phase does the following things :
 If you have a legitimate error, or need support, please [open an issue](../../issues)
 
 # Citing
+
+Cite as :
+Bruce Becker, & Sakhile Masoka. (2017). SouthAfricaDigitalScience/torque-2.5: CODE-RADE Foundation Release 3 - TORQUE-2.5 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.572609
