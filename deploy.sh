@@ -24,8 +24,8 @@ rm -rf *
 --disable-gui \
 --with-server-home=${SOFT_DIR}-gcc-${GCC_VERSION}/spool
 make install -j2
-echo "Creating the modules file directory ${LIBRARIES_MODULES}"
-mkdir -p ${LIBRARIES_MODULES}/${NAME}
+echo "Creating the modules file directory ${LIBRARIES}"
+mkdir -p ${LIBRARIES}/${NAME}
 
 (
 cat <<MODULE_FILE
@@ -52,7 +52,7 @@ prepend-path    PATH                         $::env(TORQUE_DIR)/bin
 prepend-path    MANPATH                $::env(TORQUE_DIR)/man
 prepend-path    LD_LIBRARY_PATH $::env(TORQUE_DIR)/lib
 MODULE_FILE
-) >  ${LIBRARIES_MODULES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
+) >  ${LIBRARIES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
 module avail ${NAME}
 module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}

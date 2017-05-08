@@ -43,9 +43,9 @@ prepend-path    MANPATH                $::env(TORQUE_DIR)/man
 prepend-path    LD_LIBRARY_PATH $::env(TORQUE_DIR)/lib
 MODULE_FILE
 ) > modules/${VERSION}-gcc-${GCC_VERSION}
-mkdir -p ${LIBRARIES_MODULES}/${NAME}
+mkdir -p ${LIBRARIES}/${NAME}
 
-cp modules/${VERSION}-gcc-${GCC_VERSION} ${LIBRARIES_MODULES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
+cp modules/${VERSION}-gcc-${GCC_VERSION} ${LIBRARIES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
 echo "Testing module"
 module avail
